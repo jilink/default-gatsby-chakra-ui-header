@@ -66,7 +66,7 @@ const MenuLinks = ({ isOpen }) => (
         >
           Dropdown
         </MenuButton>
-        <MenuList style={{ color: "black" }}>
+        <MenuList color="secondary">
           <MenuItemLink to="/link1">link 1</MenuItemLink>
           <MenuItemLink to="/link2">link 2</MenuItemLink>
           <MenuItemLink to="/link3">link 3</MenuItemLink>
@@ -85,7 +85,7 @@ const NavBarContainer = ({ children, ...props }) => {
       wrap="wrap"
       w="100%"
       mb={4}
-      p={4}
+      p={2}
       bg={["primary.500", "primary.500", "transparent", "transparent"]}
       {...props}
     >
@@ -97,13 +97,8 @@ const Header = ({ siteTitle }) => {
   const [isOpen, setIsOpen] = React.useState(false)
   const toggle = () => setIsOpen(!isOpen)
   return (
-    <header
-      style={{
-        background: `black`,
-        color: "white",
-      }}
-    >
-      <NavBarContainer>
+    <header>
+      <NavBarContainer bg="primary" color="white">
         <Logo w="100px" siteTitle={siteTitle} />
         <MenuToggle toggle={toggle} isOpen={isOpen} />
         <MenuLinks isOpen={isOpen} />
